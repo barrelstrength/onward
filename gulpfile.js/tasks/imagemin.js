@@ -7,7 +7,7 @@ if (!pathConfig.imagemin) {
 const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 
-let imageminTask = function () {
+const imageminTask = function () {
   gulp.src(pathConfig.imagemin.sourceImages)
     .pipe(imagemin())
     .pipe(gulp.dest(pathConfig.imagemin.optimizedImages));

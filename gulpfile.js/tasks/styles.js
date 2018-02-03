@@ -4,20 +4,20 @@ if (!pathConfig.styles) {
   return;
 }
 
-const gulp = require('gulp'),
-  plumber = require('gulp-plumber'),
-  sass = require('gulp-sass'),
-  concat = require('gulp-concat'),
-  autoprefixer = require('gulp-autoprefixer'),
-  minifyCss = require('gulp-minify-css'),
-  sourcemaps = require('gulp-sourcemaps'),
-  notify = require('gulp-notify'),
-  livereload = require('gulp-livereload'),
-  del = require('del'),
-  gutil = require('gulp-util'),
-  rev = require('gulp-rev');
+const gulp = require('gulp');
+const plumber = require('gulp-plumber');
+const sass = require('gulp-sass');
+const concat = require('gulp-concat');
+const autoprefixer = require('gulp-autoprefixer');
+const minifyCss = require('gulp-minify-css');
+const sourcemaps = require('gulp-sourcemaps');
+const notify = require('gulp-notify');
+const livereload = require('gulp-livereload');
+const del = require('del');
+const gutil = require('gulp-util');
+const rev = require('gulp-rev');
 
-let cssTask = function () {
+const cssTask = function () {
 
   //Remove old files
   del.sync(pathConfig.styles.destinationDirectory, {force: true});

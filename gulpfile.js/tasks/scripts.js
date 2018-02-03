@@ -1,21 +1,22 @@
 const pathConfig = global.PATH_CONFIG;
+
 if (!pathConfig.js) {
   return;
 }
 
-const gulp = require('gulp'),
-  jshint = require('gulp-jshint'),
-  concat = require('gulp-concat'),
-  rename = require('gulp-rename'),
-  uglify = require('gulp-uglify'),
-  sourcemaps = require('gulp-sourcemaps'),
-  notify = require('gulp-notify'),
-  livereload = require('gulp-livereload'),
-  del = require('del'),
-  rev = require('gulp-rev'),
-  gutil = require('gulp-util');
+const gulp = require('gulp');
+const jshint = require('gulp-jshint');
+const concat = require('gulp-concat');
+const rename = require('gulp-rename');
+const uglify = require('gulp-uglify');
+const sourcemaps = require('gulp-sourcemaps');
+const notify = require('gulp-notify');
+const livereload = require('gulp-livereload');
+const del = require('del');
+const rev = require('gulp-rev');
+const gutil = require('gulp-util');
 
-let jsTask = function () {
+const jsTask = function () {
 
   //Remove old files
   del.sync(pathConfig.js.jsDest, {force: true});

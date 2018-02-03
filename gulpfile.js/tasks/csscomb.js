@@ -1,13 +1,13 @@
 const pathConfig = global.PATH_CONFIG;
 
-if (!pathConfig.cssCombcomb) {
+if (!pathConfig.csscomb) {
   return;
 }
 
-let gulp = require('gulp');
-let csscomb = require('gulp-csscomb');
+const gulp = require('gulp');
+const csscomb = require('gulp-csscomb');
 
-let combTask = function () {
+const combTask = function () {
   gulp.task('csscomb', function () {
     return gulp.src(pathConfig.cssCombcomb.combSource)
       .pipe(csscomb(pathConfig.cssCombcomb.combConfigFile))
