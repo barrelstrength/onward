@@ -10,7 +10,7 @@ const imagemin = require('gulp-imagemin');
 let imageminTask = function () {
   gulp.src(pathConfig.imagemin.sourceImages)
     .pipe(imagemin())
-    .pipe(gulp.dest(pathConfig.imagemin.optimizedImages))
+    .pipe(gulp.dest(pathConfig.imagemin.optimizedImages));
 };
 
 gulp.task('imagemin', imageminTask);

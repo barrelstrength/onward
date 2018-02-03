@@ -5,7 +5,6 @@ if (!pathConfig.styles) {
 }
 
 const gulp = require('gulp'),
-  path = require('path'),
   plumber = require('gulp-plumber'),
   sass = require('gulp-sass'),
   concat = require('gulp-concat'),
@@ -13,7 +12,6 @@ const gulp = require('gulp'),
   minifyCss = require('gulp-minify-css'),
   sourcemaps = require('gulp-sourcemaps'),
   notify = require('gulp-notify'),
-  csscomb = require('gulp-csscomb'),
   livereload = require('gulp-livereload'),
   del = require('del'),
   gutil = require('gulp-util'),
