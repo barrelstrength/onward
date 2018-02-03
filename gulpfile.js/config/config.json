@@ -5,6 +5,8 @@
   },
 
   "tasks": {
+    "source": "./source",
+    "dest": "./web",
     "css": {
       "browserSupport" :        ["last 2 versions"],
       "minifyCssOptions":       {"compatibility": "ie8"},
