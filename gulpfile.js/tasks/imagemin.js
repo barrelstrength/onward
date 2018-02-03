@@ -1,4 +1,4 @@
-var config       = require('../config/bsd-gulp-config.json');
+var config       = global.PATH_CONFIG;
 if(!config.tasks.imagemin) return;
 
 var gulp         = require('gulp'),
