@@ -66,7 +66,7 @@ yarn add file:../../your/local/onward (i.e. file:../../Sites/Tools/onward)
 yarn link onward
 ```
 
-### Responsibilities
+### Application Flow
 
 When you add onward to your project, you will initialize the `on` command:
 
@@ -83,6 +83,9 @@ The command `yarn run on` runs gulp (`onward/gulpfile.js/index.js`) which does s
 3. Runs any tasks defined in the task config
 
 
+1. bin/on.js - initialize stuff and initiate gulp with any arguments provided
+2. gulpfile.js/index.js - resolve paths, load all gulp tasks. Initiate any gulp tasks requested, or fallback and trigger the default task if no specific task is requested.
+3. gulpfile.js/default.js - kick off all of our gulp tasks with the default task 
 
 
 
