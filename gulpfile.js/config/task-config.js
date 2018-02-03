@@ -1,8 +1,8 @@
 module.exports = {
 
-  "gulp":{
-    "defaultTasks": ["css", "js"],
-    "productionTasks": ["imagemin", "csscomb"]
+  "environments":{
+    "default": ["css", "js"],
+    "production": ["imagemin", "csscomb"]
   }
 
 //  clean: {
