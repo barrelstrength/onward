@@ -8,9 +8,13 @@ const projectPath = appPath.require('helpers/project-path-helper');
 
 gulp.task('init', function() {
 
-  let configPath = projectPath.resolve('config');
-  let configStream = gulp.src(['gulpfile.js/config/path-config.json'])
-    .pipe(gulp.dest(configPath));
+  let pathConfigPath = projectPath.resolve('gulpfile.js/config');
+  let pathConfigStream = gulp.src(['gulpfile.js/config/path-config.json'])
+    .pipe(gulp.dest(pathConfigPath));
+
+  let taskConfigPath = projectPath.resolve('gulpfile.js/config');
+  let taskConfigStream = gulp.src(['gulpfile.js/config/task-config.js'])
+    .pipe(gulp.dest(taskConfigPath));
 
   let sourcePath = projectPath.resolve(global.PATH_CONFIG.basePath.source);
   let srcStream = gulp.src(['source/**/*', 'source/**/.gitkeep'])
@@ -23,5 +27,5 @@ To start the dev server:
 yarn run on
 `));
 
-  return merge(configStream, srcStream);
+  return merge(pathConfigStream, taskConfigStream, srcStream);
 });

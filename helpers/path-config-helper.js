@@ -8,13 +8,13 @@ module.exports = {
      * Get the Path configuration settings
      *
      * This method will override the defaults if you add a custom path config file
-     * in your project's config folder: config/path-config.js
+     * in your project's config folder: gulpfile.js/config/path-config.js
      *
      * @returns {*}
      */
     getPathConfig: function () {
 
-        const pathConfigOverride = projectPath.resolve('config/path-config.json');
+        const pathConfigOverride = projectPath.resolve('gulpfile.js/config/path-config.json');
 
         if (fs.existsSync(pathConfigOverride)) {
             return require(pathConfigOverride);

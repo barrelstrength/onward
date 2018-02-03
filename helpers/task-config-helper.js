@@ -8,13 +8,13 @@ module.exports = {
      * Get the Task configuration settings
      *
      * This method will override the defaults if you add a custom task config file
-     * in your project's config folder: config/task-config.js
+     * in your project's config folder: gulpfile.js/config/task-config.js
      *
      * @returns {*}
      */
     getTaskConfig: function () {
 
-        const taskConfigOverride = projectPath.resolve('config/task-config.js');
+        const taskConfigOverride = projectPath.resolve('gulpfile.js/config/task-config.js');
 
         if (fs.existsSync(taskConfigOverride)) {
             return require(taskConfigOverride);
