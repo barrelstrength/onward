@@ -14,13 +14,21 @@ module.exports = {
      */
     getPathConfig: function () {
 
-        const pathConfigOverride = projectPath.resolve('gulpfile.js/config/path-config.json');
+      let configPath = 'gulpfile.js/config';
 
-        if (fs.existsSync(pathConfigOverride)) {
-            return require(pathConfigOverride);
-        }
+      if (process.env.ONWARD_CONFIG_PATH) {
+        configPath = process.env.ONWARD_CONFIG_PATH;
+      }
 
-        return appPath.require('gulpfile.js/config/path-config.json');
+      const pathConfigOverride = projectPath.resolve(configPath, 'path-config.json');
+
+      // Use the config file provided by the project
+      if (fs.existsSync(pathConfigOverride)) {
+        return require(pathConfigOverride);
+      }
+
+      // Fallback to use our default config file
+      return appPath.require('gulpfile.js/config/path-config.json');
     }
 
 };

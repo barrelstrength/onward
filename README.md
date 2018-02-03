@@ -1,6 +1,6 @@
 # Onward!
 
-Onward is a collection of build tools to help automate common front-end workflows.
+Onward is a collection of build tools to help organize and automate common front-end workflows.
 
 ## Setup
  
@@ -9,8 +9,54 @@ To setup a project using onward, run:
 ```
 yarn init
 yarn add onward
+yarn run on init
 yarn run on
 ```
+
+## Commands
+
+### init
+
+```
+yarn run on init
+```
+
+Once onward is setup and installed, running `on init` will setup config and template files for your project.
+
+```
+project-folder
+  |-- node_modules
+  |-- gulfile.js
+        |-- config
+              |-- path-config.json
+              |-- task-config.json
+  |-- source
+        |-- fonts
+        |-- icons
+        |-- images
+        |-- scripts
+        |-- styles
+
+```
+
+
+## Configuration
+
+By default, Onward expects your project config files to be placed in a `./gulfile.js/config` folder at the root of your project. You may specify an alternative relative location by setting an environment variable:
+
+```
+// package.json
+"scripts": {
+  "on": "ONWARD_CONFIG_PATH='./somewhere/else' on"
+}
+
+// command line
+yarn run on
+```
+
+The files must be named `path-config.json` and `task-config.js`.
+
+## Development
 
 To develop and improve onward locally, you can setup and link your local onward repository:
 
@@ -20,7 +66,7 @@ yarn add file:../../your/local/onward (i.e. file:../../Sites/Tools/onward)
 yarn link onward
 ```
 
-## Responsibilities
+### Responsibilities
 
 When you add onward to your project, you will initialize the `on` command:
 
