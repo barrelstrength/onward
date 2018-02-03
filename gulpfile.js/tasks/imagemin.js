@@ -1,14 +1,17 @@
-var config       = global.PATH_CONFIG;
-if(!config.tasks.imagemin) return;
+const pathConfig = global.PATH_CONFIG;
 
-var gulp         = require('gulp'),
-    imagemin     = require('gulp-imagemin');
+if (!pathConfig.imagemin) {
+  return;
+}
 
-var imageminTask = function(){
-    gulp.src(config.tasks.imagemin.sourceImages)
-        .pipe(imagemin())
-        .pipe(gulp.dest(config.tasks.imagemin.optimizedImages))
+const gulp = require('gulp');
+const imagemin = require('gulp-imagemin');
+
+let imageminTask = function () {
+  gulp.src(pathConfig.imagemin.sourceImages)
+    .pipe(imagemin())
+    .pipe(gulp.dest(pathConfig.imagemin.optimizedImages))
 };
 
 gulp.task('imagemin', imageminTask);
-gulp.watch(config.tasks.imagemin.sassWatch, imageminTask);
+gulp.watch(pathConfig.imagemin.sassWatch, imageminTask);

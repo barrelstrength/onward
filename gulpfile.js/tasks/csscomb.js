@@ -1,15 +1,18 @@
-var config       = global.PATH_CONFIG;
-if(!config.tasks.csscomb) return;
+const pathConfig = global.PATH_CONFIG;
 
-var gulp         = require('gulp');
-var csscomb      = require('gulp-csscomb');
+if (!pathConfig.cssCombcomb) {
+  return;
+}
 
-var combTask = function(){
-    gulp.task('csscomb', function() {
-        return gulp.src(config.tasks.csscomb.combSource)
-            .pipe(csscomb(config.tasks.csscomb.combConfigFile))
-            .pipe(gulp.dest(config.tasks.csscomb.combDestination));
-    });
+let gulp = require('gulp');
+let csscomb = require('gulp-csscomb');
+
+let combTask = function () {
+  gulp.task('csscomb', function () {
+    return gulp.src(pathConfig.cssCombcomb.combSource)
+      .pipe(csscomb(pathConfig.cssCombcomb.combConfigFile))
+      .pipe(gulp.dest(pathConfig.cssCombcomb.combDestination));
+  });
 };
 
 gulp.task('csscomb', combTask);

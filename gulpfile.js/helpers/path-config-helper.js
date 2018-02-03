@@ -11,16 +11,15 @@ module.exports = {
      *
      * @returns {*}
      */
-
     getPathConfig: function () {
 
-        const pathConfigOverride = path.resolve(process.env.INIT_CWD, 'config/config.json');
+        const pathConfigOverride = path.resolve(process.env.INIT_CWD, 'config/path-config.json');
 
         if (fs.existsSync(pathConfigOverride)) {
             return require(pathConfigOverride);
         }
 
-        return require('../config/config.json');
+        return require('../config/path-config.json');
     }
 
 };

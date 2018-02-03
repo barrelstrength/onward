@@ -1,14 +1,14 @@
-const gulp = require('gulp')
-const del  = require('del')
-const path = require('path')
+const gulp = require('gulp');
+const del  = require('del');
+const path = require('path');
 
-const cleanTask = function (cb) {
-  var patterns = TASK_CONFIG.clean && TASK_CONFIG.clean.patterns ?
-    TASK_CONFIG.clean.patterns :
-    path.resolve(process.env.PWD, PATH_CONFIG.dest)
+const cleanTask = function () {
+  let patterns = global.TASK_CONFIG.clean && global.TASK_CONFIG.clean.patterns ?
+    global.TASK_CONFIG.clean.patterns :
+    path.resolve(process.env.PWD, global.PATH_CONFIG.basePath.dest);
 
-  return del(patterns, { force: true })
-}
+  return del(patterns, { force: true });
+};
 
-gulp.task('clean', cleanTask)
-module.exports = cleanTask
+gulp.task('clean', cleanTask);
+module.exports = cleanTask;

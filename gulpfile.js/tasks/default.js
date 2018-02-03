@@ -1,5 +1,4 @@
 const gulp = require('gulp');
-const gulpSequence = require('gulp-sequence');
 
 const config = global.PATH_CONFIG;
 

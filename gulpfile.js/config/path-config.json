@@ -1,0 +1,58 @@
+{
+  "basePath": {
+    "source": "./source",
+    "dest": "./web"
+  },
+  "styles": {
+    "source": "scss",
+    "dest": "css",
+
+    "browserSupport": [
+      "last 2 versions"
+    ],
+    "minifyCssOptions": {
+      "compatibility": "ie8"
+    },
+    "sourceFile": "source/scss/app.scss",
+    "librariesSource": [],
+    "destinationDirectory": "public/assets/css/",
+    "destinationFile": "app.min.css",
+    "watchFiles": "scss/**/*.scss",
+    "watchTasks": [
+      "css"
+    ],
+    "sourcemapDest": ".",
+    "sourcemapSourceRoot": "source/scss/"
+  },
+  "csscomb": {
+    "combSource": "source/scss/*",
+    "combDestination": "source/scss/",
+    "combConfigFile": "./gulpfile.js/config/csscomb.json"
+  },
+  "js": {
+    "jsSourceFiles": "source/js/*.js",
+    "jsDest": "public/assets/js/",
+    "concatJs": "app.js",
+    "productionJs": "app.min.js",
+    "jsLibraries": "utilities.js",
+    "jsLibrariesMinified": "utilities.min.js",
+    "jsLibrarySourceFiles": [],
+    "sourcemapDest": ".",
+    "sourcemapSourceRoot": "source/js/",
+    "watchFiles": "",
+    "watchTasks": [
+      "js"
+    ]
+  },
+  "imagemin": {
+    "sourceImages": "source/img/*",
+    "optimizedImages": "public/assets/img",
+    "sassWatch": "source/img/**.*"
+  },
+  "rev": {
+    "manifest": {
+      "destination": "public",
+      "filename": "manifest.json"
+    }
+  }
+}
