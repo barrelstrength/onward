@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 
-const config = global.PATH_CONFIG;
+const taskConfig = global.TASK_CONFIG;
 
-gulp.task('default', config.gulp.defaultTasks);
-module.exports = config.gulp.defaultTasks;
+gulp.task('default', taskConfig.gulp.defaultTasks);
+module.exports = taskConfig.gulp.defaultTasks;

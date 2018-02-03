@@ -13,13 +13,13 @@ module.exports = {
      */
     getTaskConfig: function () {
 
-        const taskConfigOverride = path.resolve(process.env.INIT_CWD, 'config/task-config.json');
+        const taskConfigOverride = path.resolve(process.env.INIT_CWD, 'config/task-config.js');
 
         if (fs.existsSync(taskConfigOverride)) {
             return require(taskConfigOverride);
         }
 
-        return require('../config/task-config.json');
+        return require('../config/task-config.js');
     }
 
 };
