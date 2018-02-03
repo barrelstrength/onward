@@ -1,5 +1,6 @@
-const path = require('path');
 const fs = require('fs');
+const appPath = require('app-root-path');
+const projectPath = appPath.require('helpers/project-path-helper');
 
 module.exports = {
 
@@ -13,13 +14,13 @@ module.exports = {
      */
     getTaskConfig: function () {
 
-        const taskConfigOverride = path.resolve(process.env.INIT_CWD, 'config/task-config.js');
+        const taskConfigOverride = projectPath.resolve('config/task-config.js');
 
         if (fs.existsSync(taskConfigOverride)) {
             return require(taskConfigOverride);
         }
 
-        return require('../config/task-config.js');
+        return appPath.require('gulpfile.js/config/task-config.js');
     }
 
 };

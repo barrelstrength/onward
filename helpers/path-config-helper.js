@@ -1,5 +1,6 @@
-const path = require('path');
 const fs = require('fs');
+const appPath = require('app-root-path');
+const projectPath = appPath.require('helpers/project-path-helper');
 
 module.exports = {
 
@@ -13,13 +14,13 @@ module.exports = {
      */
     getPathConfig: function () {
 
-        const pathConfigOverride = path.resolve(process.env.INIT_CWD, 'config/path-config.json');
+        const pathConfigOverride = projectPath.resolve('config/path-config.json');
 
         if (fs.existsSync(pathConfigOverride)) {
             return require(pathConfigOverride);
         }
 
-        return require('../config/path-config.json');
+        return appPath.require('gulpfile.js/config/path-config.json');
     }
 
 };

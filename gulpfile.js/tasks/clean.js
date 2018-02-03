@@ -1,11 +1,13 @@
 const gulp = require('gulp');
 const del  = require('del');
-const path = require('path');
+
+const appPath = require('app-root-path');
+const projectPath = appPath.require('helpers/project-path-helper');
 
 const cleanTask = function () {
   let patterns = global.TASK_CONFIG.clean && global.TASK_CONFIG.clean.patterns ?
     global.TASK_CONFIG.clean.patterns :
-    path.resolve(process.env.PWD, global.PATH_CONFIG.basePath.dest);
+    projectPath.resolve(global.PATH_CONFIG.basePath.dest);
 
   return del(patterns, { force: true });
 };
