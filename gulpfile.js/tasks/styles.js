@@ -17,12 +17,15 @@ const del = require('del');
 const gutil = require('gulp-util');
 const rev = require('gulp-rev');
 
+const appPath = require('app-root-path');
+const projectPath = appPath.require('helpers/project-path-helper');
+
 const cssTask = function () {
 
   //Remove old files
-  del.sync(pathConfig.styles.destinationDirectory, {force: true});
+  del.sync(projectPath.resolve(pathConfig.styles.destinationDirectory), {force: true});
 
-  gulp.src(pathConfig.styles.sourceFile, { base: pathConfig.styles.sourcemapSourceRoot })
+  gulp.src(pathConfig.styles.sourceFile, {base: pathConfig.styles.sourcemapSourceRoot})
     .pipe(sourcemaps.init({
       largeFile: true
     }))
@@ -45,11 +48,11 @@ const cssTask = function () {
       sourceRoot: pathConfig.styles.sourcemapSourceRoot,
       sourceMappingURLPrefix: pathConfig.styles.sourcemapDest
     }))
-    .pipe(gulp.dest(pathConfig.styles.destinationDirectory))
+    .pipe(gulp.dest(projectPath.resolve(pathConfig.styles.destinationDirectory)))
 
     // File revving
     .pipe(rev())
-    .pipe(gulp.dest(pathConfig.styles.destinationDirectory))
+    .pipe(gulp.dest(projectPath.resolve(pathConfig.styles.destinationDirectory)))
     .pipe(rev.manifest(pathConfig.rev.manifest.destination + "/" + pathConfig.rev.manifest.filename, {
       base: pathConfig.rev.manifest.destination,
       merge: true
