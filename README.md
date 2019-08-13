@@ -1,9 +1,11 @@
 # Onward!
 
-Onward is a collection of build tools to help automate common front-end workflows.
+![Maintenance](https://img.shields.io/maintenance/no/2017)
+
+Onward is a collection of build tools to help automate common front-end workflows
 
 ## Setup
- 
+
 To setup a project using onward, run:
 
 ```
@@ -32,7 +34,7 @@ When you add onward to your project, you will initialize the `on` command:
 
 The command `yarn run on` runs gulp (`onward/gulpfile.js/index.js`) which does several things:
 
-1. Loads the path config, and any overrides 
+1. Loads the path config, and any overrides
 2. Loads the task config, and any overrides
 3. Runs any tasks defined in the task config
 
@@ -103,17 +105,17 @@ These files are for development and should not be included on the
 live server.
 
 ```
-    |-- root
-        |-- source
-            |-- scss
-                |-- libraries
-            |-- js
-                |-- libraries
-        |-- public
-            |-- assets
-                |-- css
-                |-- js
-            |-- content (user uploaded content)
+	|-- root
+		|-- source
+			|-- scss
+				|-- libraries
+			|-- js
+				|-- libraries
+		|-- public
+			|-- assets
+				|-- css
+				|-- js
+			|-- content (user uploaded content)
 ```
 
 
@@ -157,10 +159,10 @@ In order to get the revved names in the templates, you need to install the  Craf
 ```
 <?php
 return array(
-    '*' => array(
-        'manifestPath' => '../public/manifest.json',
-        'assetsBasePath' => '../public/',
-    ),
+	'*' => array(
+		'manifestPath' => '../public/manifest.json',
+		'assetsBasePath' => '../public/',
+	),
 );
 ```
 
